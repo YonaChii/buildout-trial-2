@@ -5,7 +5,7 @@ setup(
   version= "1.0",
   description='trying 2nd tutorial',
   author='Yona',
-  packages= find_packages('src'),
-  package_dir={ '' : 'src' },
+  packages=['app',], #find_packages('src/exam'),
+  package_dir={ '' : 'src/exam' },
   install_requires = ['django == 1.5.5'],
 )

@@ -1,0 +1,11 @@
+<h1>{{ exam.title }}</h1>
+<ol>
+  {% for question in exam.question_set.all %}
+  <li>{{ question.text }}</li>
+  <ul>
+    {% for option in question.option_set.all %}
+    <li>{{ option.text }}</li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</ol>

@@ -3,7 +3,7 @@
 import sys
 
 sys.path[0:0] = [
-  '/home/pc-0164/trial/test/src',
+  '/home/pc-0164/trial/test/src/exam',
   '/home/pc-0164/.virtualenvs/stage/lib/python2.7/site-packages',
   ]
 

@@ -1,0 +1,5 @@
+<h2>Exam number {{ exam.id }} Result </h2>
+<h3> {{ exam.title }} </h3>
+
+</br>
+Result
