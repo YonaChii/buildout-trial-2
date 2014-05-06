@@ -20,6 +20,9 @@ class QApp(admin.ModelAdmin):
 	(None, {'fields':['text','correct_answer']}),
     ]
     inlines = [OptionInfield]
+    list_display = ('text', 'exam')
+    list_filter = ['exam']
+    search_fields = ['text']
 
 admin.site.register(Exam, ExamApp)
 admin.site.register(Question, QApp)

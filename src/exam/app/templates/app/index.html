@@ -1,6 +1,6 @@
 {% load staticfiles %}
 <head>
-  <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}" />
   <title>Exam List</title>
 </head>
 <body>
@@ -16,4 +16,8 @@
       <p>No exams are available.</p>
     {% endif %}
   </div>
+  <footer></br>
+    <br> <a href="{% url 'app:logout' %}"> Log-out </a> | <a href="{% url 'app:index' %}"> BACK </a>|<a href=""> Exam Index </a> </br>
+    All Rights Reserved @ Yona-Copps
+  </footer>
 </body>

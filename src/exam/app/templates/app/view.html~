@@ -1,10 +1,27 @@
-<h1>{{ exam.title }}</h1>
-<ol>
-  {% for question in exam.question_set.all %}
-  <li>{{ question.text }}</li>
-  <ul>
-    {% for option in question.option_set.all %}
-    <li>{{ option.text }}</li>
-  </ul>
-  {% endfor %}
-</ol>
+{% load staticfiles %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}" />
+  <title>{{exam.title}} Exam</title>
+</head>
+<body>
+  <h1 id='title'> {{ exam.title }} </h1>
+  <div id = 'examQs'>
+    {% if exam %}
+      <ol>
+        {% for question in exam.question_set.all %}
+        <li>{{ question.text }}</li>
+          <ul>
+            {% for option in question.option_set.all %}
+              <li>{{ option.text }}</li>
+            {% endfor %}
+          </ul> </br>
+        {% endfor %}
+      </ol>
+    {% endif %}
+  </div>
+  <button> Submit </button>
+  <footer></br>
+    <br> <a href="{% url 'app:logout' %}"> Log-out </a> | <a href="{% url 'app:index' %}"> BACK </a>|<a href=""> Exam Index </a> </br>
+    All Rights Reserved @ Yona-Copps
+  </footer>
+</body>

@@ -6,7 +6,7 @@ from django.views import generic
 from app.models import Exam
 
 def index(request):
-    exam_list = Exam.objects.all()[:5]
+    exam_list = Exam.objects.all()
     return render(request, 'app/index.html', {'exam_list': exam_list})
 
 def view(request, exam_id):
@@ -24,13 +24,11 @@ def login(request):
     if user is not None:
 	if user.is_active:
 	    login(request, user)
-	# Redirect to a success page.
+	    return redirect('app:index')
 	else:
-	    pass
-	# Return a disabled account error message
+	    return HttpResponse('Disabled Account')
     else:
-	pass
-	# Return an invalid login error message.
+	return render(request, 'app:login', {'invalid':True})
 
 def logout(request):
     logout(request)

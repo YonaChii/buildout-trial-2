@@ -1,6 +1,6 @@
 {% load staticfiles %}
 <head>
-  <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}" />
   <title>Exam List</title>
 </head>
 <body>
@@ -9,11 +9,15 @@
     {% if exam_list %}
     <ul>
       {% for exam in exam_list %}
-        <li><a href="{% url 'app:view' exam.id %}">{{ poll.text }}</a></li>
+        <li><a href="{% url 'app:view' exam.id %}">{{ exam.title }}</a></li>
       {% endfor %}
     </ul>
     {% else %}
       <p>No exams are available.</p>
     {% endif %}
   </div>
+  <footer>
+    <br> <a href="{% url 'app:logout' %}"> Log-out </a> | <a href="{% url 'app:index' %}"> BACK </a>|<a href=""> Exam Index </a> </br>
+    All Rights Reserved @ Yona-Copps
+  </footer>
 </body>

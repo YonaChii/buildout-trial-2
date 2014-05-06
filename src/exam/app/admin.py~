@@ -20,6 +20,7 @@ class QApp(admin.ModelAdmin):
 	(None, {'fields':['text','correct_answer']}),
     ]
     inlines = [OptionInfield]
+    list_display = ('text', 'exam')
 
 admin.site.register(Exam, ExamApp)
 admin.site.register(Question, QApp)
