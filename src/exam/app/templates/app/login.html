@@ -1,19 +1,25 @@
-<title> Log-in </title>
-<h2> Log-in Page </h2>
-{% if invalid %}
-  <p id="error">Your username and password didn’t match. Please try again.</p>
-{% elif not_in %}
-  <p id="error"> You are not logged in. </p>
-{% endif %}
+{% load staticfiles %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}" />
+  <title> Log-in </title>
+</head>
+<body>
+  <h2> Log-in Page </h2>
+  {% if invalid %}
+    <p id="error">Your username and password didn’t match. Please try again.</p>
+  {% elif not_in %}
+    <p id="error"> You are not logged in. </p>
+  {% endif %}
 
-<form id ="login" action="{% url 'app:login' %}" method="post">
-{% csrf_token %}
-  Username: <input type="text" name="username" form="login"> <br>
-  Password: <input type="password" name="password" form="login">
-  </br> <button class="button"> Submit </button>
-</form>
+  <form id ="login" action="{% url 'app:login' %}" method="post">
+  {% csrf_token %}
+    Username: <input type="text" name="username" form="login"> <br>
+    Password: <input type="password" name="password" form="login">
+    </br> <button class="button"> Submit </button>
+  </form>
 
-<footer></br>
+  <footer></br>
     <br> <a href="{% url 'app:index' %}"> BACK </a></br>
     All Rights Reserved @ Yona-Copps
   </footer>
+</body>

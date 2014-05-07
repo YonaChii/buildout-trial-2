@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
-from app.models import Exam
+from app.models import Exam, User
 
 def index(request):
     if request.user.is_authenticated():
@@ -51,7 +51,9 @@ def logout_view(request):
     return redirect('app:login')
 
 def calc(request, exam_id):
+    score = 0;
+    exam = get_object_or_404(Exam, pk=exam_id)
     #take in varaibles answers and number of questions
     #calculate total score
-    #inc exam.times_taken
-    return redirect('app:index')
+    exam.times_taken += 1
+    return redirect ('app:result')

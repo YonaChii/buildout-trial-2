@@ -4,8 +4,8 @@
   <title>{{exam.title}} Exam</title>
 </head>
 <body>
-  <h1 id='title'> {{ exam.title }} </h1>
-  <div id = 'examQs'>
+  <h1 id="title"> {{ exam.title }} </h1>
+  <div id = "examQs">
     {% if exam %}
       <ol>
         {% for question in exam.question_set.all %}

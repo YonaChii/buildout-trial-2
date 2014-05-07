@@ -9,12 +9,12 @@ body {
   background-size:cover;
 }
 a, a:visited {
-  color: brown
+  color: brown;
 }
 
 li {
   color: #8DCDC1 ;
-  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 ul {
@@ -22,11 +22,11 @@ ul {
 }
 
 a:hover {
-  color: #EB6E44
+  color: #EB6E44;
 }
 
 div {
-  background-color: rgba(255,255,255,0.8)
+  background-color: rgba(255,255,255,0.8);
 }
 
 footer {
@@ -40,8 +40,12 @@ footer a, footer a:visited {
   color: green;
 }
 
+h2 {
+  padding-bottom: -10px;
+}
+
 #error {
-  color: red
+  color: red;
 }
 
 #title {
@@ -57,5 +61,5 @@ footer a, footer a:visited {
 }
 
 .center {
-  margin: 0 auto 0 auto
+  margin: 0 auto 0 auto;
 }

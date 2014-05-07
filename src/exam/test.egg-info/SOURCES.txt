@@ -1,8 +1,10 @@
 README
 setup.py
 src/exam/app/__init__.py
+src/exam/app/admin.py
 src/exam/app/models.py
 src/exam/app/tests.py
+src/exam/app/urls.py
 src/exam/app/views.py
 src/exam/exams/__init__.py
 src/exam/exams/settings.py

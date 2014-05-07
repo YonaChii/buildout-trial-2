@@ -1,5 +1,18 @@
-<h2>Exam number {{ exam.id }} Results </h2>
-<h3> {{ exam.title }} </h3>
+{% load staticfiles %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}" />
+  <title> {{ exam.title }} Result </title>
+</head>
+<body>
+  <h1 id="title"> Results </h1>
+  <div id= "qList">  <br>  
+    <h3> Exam Title: {{ exam.title }} </h3>
+    </br>
+    Result : {{ exam.times_taken }}
+  </div>
 
-</br>
-Result : {{ exam.times_taken }}
+  <footer></br>
+    <br> <a href="{% url 'app:logout' %}"> Log-out </a> | <a href="{% url 'app:index' %}"> BACK </a>|<a href=""> Exam Index </a> </br>
+    All Rights Reserved @ Yona-Copps
+  </footer>
+</body>

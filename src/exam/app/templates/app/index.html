@@ -2,10 +2,12 @@
 <head>
   <link rel="stylesheet" type="text/css" href="{% static 'app/style.css' %}" />
   <title>Exam List</title>
+  {# <script> alert('Hi! How are you. Lets get ready to take the exams!!! O.o') </script> #}
 </head>
 <body>
-  <h1 id='title'> Exam List </h1>
-  <div id='qlist' class='center'>
+  Hello, username!
+  <h1 id="title"> Exam List </h1>
+  <div id="qlist" class="center">
     {% if exam_list %}
     <ul>
       {% for exam in exam_list %}
