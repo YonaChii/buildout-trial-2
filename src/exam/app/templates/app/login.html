@@ -1,17 +1,19 @@
 <title> Log-in </title>
 <h2> Log-in Page </h2>
-{% if form.errors %}
+{% if invalid %}
   <p id="error">Your username and password didn’t match. Please try again.</p>
+{% elif not_in %}
+  <p id="error"> You are not logged in. </p>
 {% endif %}
 
-<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+<form id ="login" action="{% url 'app:login' %}" method="post">
 {% csrf_token %}
-  Username: <input type='text' name='username'/> <br>
-  Password: <input type='password' name='password'/>
-  <button name='submit'/>
+  Username: <input type="text" name="username" form="login"> <br>
+  Password: <input type="password" name="password" form="login">
+  </br> <button class="button"> Submit </button>
 </form>
 
 <footer></br>
-    <br> <a href="{% url 'app:logout' %}"> Log-out </a> | <a href="{% url 'app:index' %}"> BACK </a>|<a href=""> Exam Index </a> </br>
+    <br> <a href="{% url 'app:index' %}"> BACK </a></br>
     All Rights Reserved @ Yona-Copps
   </footer>

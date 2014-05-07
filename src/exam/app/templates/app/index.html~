@@ -16,7 +16,7 @@
       <p>No exams are available.</p>
     {% endif %}
   </div>
-  <footer>
+  <footer></br>
     <br> <a href="{% url 'app:logout' %}"> Log-out </a> | <a href="{% url 'app:index' %}"> BACK </a>|<a href=""> Exam Index </a> </br>
     All Rights Reserved @ Yona-Copps
   </footer>
